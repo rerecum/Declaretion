@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            comboBox2.Text = "INF.04";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace WindowsFormsApp1
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            comboBox2.Text = "INF.02";
         }
 
         private void pole_TextChanged(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace WindowsFormsApp1
             saveFileDialog1.RestoreDirectory = true;
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                textBox1.Text = saveFileDialog1.FileName;
+                pole.Text = saveFileDialog1.FileName;
             }
         }
     }
