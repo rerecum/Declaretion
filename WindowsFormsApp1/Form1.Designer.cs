@@ -62,10 +62,10 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.wypisz = new System.Windows.Forms.TextBox();
+            this.pole = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.wypisz = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -434,15 +434,15 @@
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // wypisz
+            // pole
             // 
-            this.wypisz.Location = new System.Drawing.Point(626, 39);
-            this.wypisz.Multiline = true;
-            this.wypisz.Name = "wypisz";
-            this.wypisz.ReadOnly = true;
-            this.wypisz.Size = new System.Drawing.Size(416, 521);
-            this.wypisz.TabIndex = 13;
-            this.wypisz.TextChanged += new System.EventHandler(this.wypisz_TextChanged);
+            this.pole.Location = new System.Drawing.Point(626, 39);
+            this.pole.Multiline = true;
+            this.pole.Name = "pole";
+            this.pole.ReadOnly = true;
+            this.pole.Size = new System.Drawing.Size(416, 521);
+            this.pole.TabIndex = 13;
+            this.pole.TextChanged += new System.EventHandler(this.pole_TextChanged);
             // 
             // button1
             // 
@@ -467,27 +467,31 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // wypisz
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(248, 582);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Zatwierdź";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.wypisz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wypisz.Location = new System.Drawing.Point(248, 582);
+            this.wypisz.Name = "wypisz";
+            this.wypisz.Size = new System.Drawing.Size(188, 23);
+            this.wypisz.TabIndex = 16;
+            this.wypisz.Text = "Zatwierdź";
+            this.wypisz.UseVisualStyleBackColor = true;
+            this.wypisz.Click += new System.EventHandler(this.wypisz_Click);
             // 
+            // saveFileDialog1
+            // 
+            
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // Deklaracja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 631);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.wypisz);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.wypisz);
+            this.Controls.Add(this.pole);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.radioButton4);
@@ -548,10 +552,10 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox wypisz;
+        private System.Windows.Forms.TextBox pole;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button wypisz;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
