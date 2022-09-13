@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
@@ -231,8 +232,6 @@ namespace WindowsFormsApp1
             if (textBox6.Text.Length == 0)
                 textBox6.BackColor = Color.Red;
 
-            if(textBox6.Text.)
-
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
@@ -242,6 +241,12 @@ namespace WindowsFormsApp1
 
             if (textBox7.Text.Length == 0)
                 textBox7.BackColor = Color.Red;
+
+            Regex regEmail;
+            regEmail = new Regex(@"^[a-z][a-z--9_]*@[a-z0-9]*\.[a-z]{2,3}$");
+
+            if(!regEmail.IsMatch(textBox7.Text))
+                textBox7.BackColor= Color.Red;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -268,6 +273,13 @@ namespace WindowsFormsApp1
             {
                 Filter ="txt files (*.txt)|*.txt"
             };
+
+            if (dialog.ShowDialog() != DialogResult.OK) return;
+
+            using (var stream = new StreamWriter(dialog.FileName))
+            {
+                stream.WriteLine(pole.Text);
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
