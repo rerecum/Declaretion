@@ -491,11 +491,10 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(192, 513);
+            this.label13.Location = new System.Drawing.Point(195, 509);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.Size = new System.Drawing.Size(0, 13);
             this.label13.TabIndex = 17;
-            this.label13.Text = "label13";
             // 
             // Deklaracja
             // 

@@ -84,7 +84,14 @@ namespace WindowsFormsApp1
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(comboBox2.SelectedIndex == 0)
+                label13.Text = "Administracja i eksploatacja systemów komputerowych, urządzeń\r\nperyferyjnych i lokalnych sieci komputerowych";
 
+            if (comboBox2.SelectedIndex == 1)
+                label13.Text = "Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz\r\nbazami danych";
+
+            if (comboBox2.SelectedIndex == 2)
+                label13.Text = "Projektowanie, programowanie i testowanie aplikacji";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
