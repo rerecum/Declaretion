@@ -59,7 +59,10 @@ namespace WindowsFormsApp1
 
 
             if (textBox1.Text.Length == 0)
+            {
                 textBox1.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -68,7 +71,10 @@ namespace WindowsFormsApp1
 
 
             if (textBox2.Text.Length == 0)
+            {
                 textBox2.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -77,7 +83,10 @@ namespace WindowsFormsApp1
 
 
             if (textBox5.Text.Length == 0)
+            {
                 textBox5.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -86,7 +95,10 @@ namespace WindowsFormsApp1
 
 
             if (textBox3.Text.Length == 0)
+            {
                 textBox3.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -95,7 +107,10 @@ namespace WindowsFormsApp1
 
 
             if (maskedTextBox4.Text.Length == 0)
+            {
                 maskedTextBox4.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -104,7 +119,10 @@ namespace WindowsFormsApp1
 
 
             if (textBox4.Text.Length == 0)
+            {
                 textBox4.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,7 +192,7 @@ namespace WindowsFormsApp1
                 pole.AppendText(Environment.NewLine);
                 pole.AppendText("  Kod pocztowy i poczta: \t" + maskedTextBox3.Text + ", " + maskedTextBox3.Text);
                 pole.AppendText(Environment.NewLine);
-                pole.AppendText("  Nr telefonu z kierunkowym: \t" + textBox6.Text);
+                pole.AppendText("  Nr telefonu z kierunkowym: \t" + maskedTextBox5.Text);
                 pole.AppendText(Environment.NewLine);
                 pole.AppendText("  Mail: \t\t\t" + textBox7.Text);
             }
@@ -187,7 +205,7 @@ namespace WindowsFormsApp1
             textBox3.Text = null;
             textBox4.Text = null;
             textBox5.Text = null;
-            textBox6.Text = null;
+            maskedTextBox5.Text = null;
             textBox7.Text = null;
             maskedTextBox1.Text = null;
             maskedTextBox2.Text = null;
@@ -200,8 +218,11 @@ namespace WindowsFormsApp1
             maskedTextBox2.BackColor = Color.White;
 
 
-            if (maskedTextBox2.Text.Count(C=>C=='_') == 0)
+            if (maskedTextBox2.Text.Count(C => C == '_') == 0)
+            {
                 maskedTextBox2.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -209,10 +230,16 @@ namespace WindowsFormsApp1
             maskedTextBox1.BackColor = Color.White;
 
             if (maskedTextBox1.Text.Count(C => C == '_') == 0)
+            {
                 maskedTextBox1.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
 
             if (!((maskedTextBox1.Text[9] - '0' % 2 == 0) && (textBox2.Text.Last() == 'A')))
+            {
                 maskedTextBox1.BackColor = Color.Red;
+                MessageBox.Show("Blad");
+            }
         }
 
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -221,17 +248,10 @@ namespace WindowsFormsApp1
 
 
             if (maskedTextBox3.Text.Count(C => C == '_') == 0)
+            {
                 maskedTextBox3.BackColor = Color.Red;
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-            textBox6.BackColor = Color.White;
-
-
-            if (textBox6.Text.Length == 0)
-                textBox6.BackColor = Color.Red;
-
+                MessageBox.Show("Blad");
+            }
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
@@ -240,13 +260,17 @@ namespace WindowsFormsApp1
 
 
             if (textBox7.Text.Length == 0)
+            {
                 textBox7.BackColor = Color.Red;
+            }
 
             Regex regEmail;
             regEmail = new Regex(@"^[a-z][a-z--9_]*@[a-z0-9]*\.[a-z]{2,3}$");
 
-            if(!regEmail.IsMatch(textBox7.Text))
-                textBox7.BackColor= Color.Red;
+            if (!regEmail.IsMatch(textBox7.Text))
+            {
+                textBox7.BackColor = Color.Red;
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -310,6 +334,19 @@ namespace WindowsFormsApp1
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'Z') && e.KeyChar != '/' && !char.IsDigit(e.KeyChar) && e.KeyChar != 08)
                 e.Handled = true;
+        }
+
+        private void maskedTextBox5_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+            maskedTextBox5.BackColor = Color.White;
+
+
+                if (maskedTextBox5.Text.Length == 0)
+                {
+                maskedTextBox5.BackColor = Color.Red;
+                    MessageBox.Show("Blad");
+                }
         }
     }
 }
