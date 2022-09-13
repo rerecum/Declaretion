@@ -207,8 +207,11 @@ namespace WindowsFormsApp1
         {
             maskedTextBox1.BackColor = Color.White;
 
-            if (maskedTextBox2.Text.Count(C => C == '_') == 0)
-                maskedTextBox2.BackColor = Color.Red;
+            if (maskedTextBox1.Text.Count(C => C == '_') == 0)
+                maskedTextBox1.BackColor = Color.Red;
+
+            if (!((maskedTextBox1.Text[9] - '0' % 2 == 0) && (textBox2.Text.Last() == 'A')))
+                maskedTextBox1.BackColor = Color.Red;
         }
 
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -216,8 +219,8 @@ namespace WindowsFormsApp1
             maskedTextBox3.BackColor = Color.White;
 
 
-            if (maskedTextBox2.Text.Count(C => C == '_') == 0)
-                maskedTextBox2.BackColor = Color.Red;
+            if (maskedTextBox3.Text.Count(C => C == '_') == 0)
+                maskedTextBox3.BackColor = Color.Red;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -227,6 +230,9 @@ namespace WindowsFormsApp1
 
             if (textBox6.Text.Length == 0)
                 textBox6.BackColor = Color.Red;
+
+            if(textBox6.Text.)
+
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
