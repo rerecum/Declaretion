@@ -47,37 +47,39 @@ namespace WindowsFormsApp1
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox2.Text = "INF.04";
+            comboBox2.Items.Clear();
+            comboBox2.Items.Add("INF.02");
+            comboBox2.Items.Add("INF.03");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.ToUpper();
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.Text = textBox2.Text.ToUpper();
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            textBox5.Text = textBox5.Text.ToUpper();
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            textBox3.Text = textBox3.Text.ToUpper();
+
         }
 
         private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            maskedTextBox4.Text = maskedTextBox4.Text.ToUpper();
+
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            textBox4.Text = textBox4.Text.ToUpper();
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,7 +190,10 @@ namespace WindowsFormsApp1
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox2.Text = "INF.02";
+            comboBox2.Items.Clear();
+            comboBox2.Items.Add("INF.03");
+            comboBox2.Items.Add("INF.04");
+
         }
 
         private void pole_TextChanged(object sender, EventArgs e)
@@ -203,19 +208,40 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = "C:\\Users\\student\\Desktop\\txt";
-            saveFileDialog1.Title = "Save text Files";
-            saveFileDialog1.CheckFileExists = true;
-            saveFileDialog1.CheckPathExists = true;
-            saveFileDialog1.DefaultExt = "txt";
-            saveFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            var dialog = new SaveFileDialog
             {
-                pole.Text = saveFileDialog1.FileName;
-            }
+                Filter ="txt files (*.txt)|*.txt"
+            };
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <'A' || e.KeyChar > 'Z') && e.KeyChar != 08)
+                e.Handled = true;
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'A' || e.KeyChar > 'Z') && e.KeyChar != 08)
+                e.Handled = true;
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'A' || e.KeyChar > 'Z') && e.KeyChar != 08)
+                e.Handled = true;
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'A' || e.KeyChar > 'Z') && e.KeyChar != 08)
+                e.Handled = true;
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'A' || e.KeyChar > 'Z') && e.KeyChar != '/' && !char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+                e.Handled = true;
         }
     }
 }
