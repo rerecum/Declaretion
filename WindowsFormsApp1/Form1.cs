@@ -54,32 +54,56 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            textBox1.BackColor = Color.White;
 
+
+            if (textBox1.Text.Length == 0)
+                textBox1.BackColor = Color.Red;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            textBox2.BackColor = Color.White;
 
+
+            if (textBox2.Text.Length == 0)
+                textBox2.BackColor = Color.Red;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+            textBox5.BackColor = Color.White;
 
+
+            if (textBox5.Text.Length == 0)
+                textBox5.BackColor = Color.Red;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            textBox3.BackColor = Color.White;
 
+
+            if (textBox3.Text.Length == 0)
+                textBox3.BackColor = Color.Red;
         }
 
         private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+            maskedTextBox4.BackColor = Color.White;
 
+
+            if (maskedTextBox4.Text.Length == 0)
+                maskedTextBox4.BackColor = Color.Red;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+            textBox4.BackColor = Color.White;
 
+
+            if (textBox4.Text.Length == 0)
+                textBox4.BackColor = Color.Red;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,27 +196,46 @@ namespace WindowsFormsApp1
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+            maskedTextBox2.BackColor = Color.White;
 
+
+            if (maskedTextBox2.Text.Count(C=>C=='_') == 0)
+                maskedTextBox2.BackColor = Color.Red;
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+            maskedTextBox1.BackColor = Color.White;
 
+            if (maskedTextBox2.Text.Count(C => C == '_') == 0)
+                maskedTextBox2.BackColor = Color.Red;
         }
 
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+            maskedTextBox3.BackColor = Color.White;
 
+
+            if (maskedTextBox2.Text.Count(C => C == '_') == 0)
+                maskedTextBox2.BackColor = Color.Red;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            textBox6.BackColor = Color.White;
 
+
+            if (textBox6.Text.Length == 0)
+                textBox6.BackColor = Color.Red;
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
+            textBox7.BackColor = Color.White;
 
+
+            if (textBox7.Text.Length == 0)
+                textBox7.BackColor = Color.Red;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
